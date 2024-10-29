@@ -1,22 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6kgk2qrgapjt"]
+[gd_scene load_steps=4 format=3 uid="uid://c6kgk2qrgapjt"]
 
 [ext_resource type="Texture2D" uid="uid://csox5dtor62ko" path="res://Resources/Icons/Icon_Follower.svg" id="1_1an8p"]
+[ext_resource type="Script" path="res://Main.cs" id="1_yfore"]
+[ext_resource type="Script" path="res://Core/Services/WebCams/ServiceWebCam.cs" id="2_ne7hu"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_yfore")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
+anchors_preset = 0
 
 [node name="Alert" type="Control" parent="Control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-grow_horizontal = 0
+anchors_preset = 0
+offset_left = 2560.0
+offset_top = 128.0
+offset_right = 2560.0
+offset_bottom = 128.0
 
 [node name="Color_Background" type="ColorRect" parent="Control/Alert"]
 layout_mode = 1
@@ -24,8 +25,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -416.0
-offset_top = 64.0
-offset_bottom = 160.0
+offset_bottom = 96.0
 grow_horizontal = 0
 color = Color(0.0588235, 0.0509804, 0.0470588, 1)
 
@@ -137,3 +137,18 @@ fit_content = true
 
 [node name="Chat" type="Control" parent="Control"]
 anchors_preset = 0
+offset_top = 928.0
+offset_bottom = 928.0
+
+[node name="WebCam" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/WebCam"]
+layout_mode = 0
+offset_left = 1728.0
+offset_top = 992.0
+offset_right = 2176.0
+offset_bottom = 1440.0
+script = ExtResource("2_ne7hu")

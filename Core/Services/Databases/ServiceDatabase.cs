@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Twitch.Core.Services.Databases.Tasks;
 
-internal sealed class ServiceDatabase :
+internal sealed class ServiceDatabase() :
 	IService
 {
 	Task IService.Setup()

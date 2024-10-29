@@ -3,10 +3,14 @@ namespace Twitch;
 
 using Godot;
 using System;
+using System.Runtime.Versioning;
 using Twitch.Core.Services;
 
-internal sealed partial class Main :
-	Node
+[SupportedOSPlatform(
+	"windows"
+)]
+internal sealed partial class Main() :
+	Node()
 {
 	internal static Node Node { get; private set; } = null;
 

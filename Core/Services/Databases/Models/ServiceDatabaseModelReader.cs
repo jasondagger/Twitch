@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 internal static class ServiceDatabaseModelReader
 {
+	static ServiceDatabaseModelReader()
+	{
+
+	}
+
 	internal static async Task<List<TServiceDatabaseModel>> ReadServiceDatabaseModelsFromSqlDataReaderAsync<TServiceDatabaseModel>(
 		SqlDataReader sqlDataReader
 	) where TServiceDatabaseModel :

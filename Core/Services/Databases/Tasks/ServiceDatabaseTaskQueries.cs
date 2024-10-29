@@ -16,7 +16,7 @@ internal static class ServiceDatabaseTaskQueries
         ServiceDatabaseTaskQueryType serviceDatabaseTaskQueryType
     )
     {
-        await ServiceDatabaseTaskQueries.c_taskQueries[key: _ = serviceDatabaseTaskQueryType].Invoke();
+        await ServiceDatabaseTaskQueries.c_taskQueries[ key: _ = serviceDatabaseTaskQueryType ].Invoke();
     }
 
     private static readonly Dictionary<ServiceDatabaseTaskQueryType, Func<Task>> c_taskQueries = new()
@@ -29,7 +29,7 @@ internal static class ServiceDatabaseTaskQueries
 
 	private static async Task RetrieveAsyncListTwitchUsers()
 	{
-		var sqlStatement = _ = $"SELECT * FROM TwitchUsers";
+		var sqlStatement = _ = ServiceDatabaseTaskQueryStatements.RetrieveListTwitchUsers;
 		await ServiceDatabaseTaskLogic.ExecuteQueryAsync(
 			sqlStatement:			  _ = sqlStatement,
 			executeQueryAsyncHandler: ServiceDatabaseTaskQueryHandlers.HandleExecuteQueryAsyncRetrievedListTwitchUsers
@@ -38,7 +38,7 @@ internal static class ServiceDatabaseTaskQueries
 
 	private static async Task RetrieveAsyncSpotifyData()
     {
-		var sqlStatement = _ = $"SELECT TOP 1 FROM SpotifyDatas";
+		var sqlStatement = _ = ServiceDatabaseTaskQueryStatements.RetrieveSpotifyData;
 		await ServiceDatabaseTaskLogic.ExecuteQueryAsync(
 			sqlStatement:			  _ = sqlStatement,
 			executeQueryAsyncHandler: ServiceDatabaseTaskQueryHandlers.HandleExecuteQueryAsyncRetrieveSpotifyData
@@ -47,7 +47,7 @@ internal static class ServiceDatabaseTaskQueries
 
     private static async Task RetrieveAsyncTwitchData()
     {
-		var sqlStatement = _ = $"SELECT TOP 1 FROM TwitchDatas";
+		var sqlStatement = _ = ServiceDatabaseTaskQueryStatements.RetrieveTwitchData;
 		await ServiceDatabaseTaskLogic.ExecuteQueryAsync(
 			sqlStatement:			  _ = sqlStatement,
 			executeQueryAsyncHandler: ServiceDatabaseTaskQueryHandlers.HandleExecuteQueryAsyncRetrieveTwitchData

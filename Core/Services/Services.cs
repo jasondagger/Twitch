@@ -3,9 +3,13 @@ namespace Twitch.Core.Services;
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using Twitch.Core.Services.Databases;
 using Twitch.Core.Services.Godots;
+using Twitch.Core.Services.Spotifies;
+using Twitch.Core.Services.Twitches;
+using Twitch.Core.Services.WebCams;
 
 internal static class Services
 {
@@ -68,5 +72,8 @@ internal static class Services
     {
 		{ _ = typeof(ServiceDatabase), _ = new ServiceDatabase() },
         { _ = typeof(ServiceGodots),   _ = new ServiceGodots()   },
+        { _ = typeof(ServiceSpotify),  _ = new ServiceSpotify()  },
+        { _ = typeof(ServiceTwitch),   _ = new ServiceTwitch()   },
+        { _ = typeof(ServiceWebCam),   _ = new ServiceWebCam()   },
 	};
 }
