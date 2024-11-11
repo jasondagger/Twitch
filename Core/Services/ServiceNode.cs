@@ -4,7 +4,7 @@ namespace Twitch.Core.Services;
 using Godot;
 using System.Threading.Tasks;
 
-internal abstract class ServiceNode :
+internal abstract class ServiceNode() :
 	IService
 {
 	public virtual Task Setup()
@@ -25,13 +25,23 @@ internal abstract class ServiceNode :
 
 	internal Node Node { get; private set; } = null;
 
+	internal virtual void ParentNodeToRoot(
+		Node node
+	)
+	{
+		this.Node.AddChild(
+            node: _ = node
+		);
+	}
+
 	private void AddServiceNodeToMainScene()
 	{
-		var type = _ = this.GetType();
+		var type      = _ = this.GetType();
 		_ = this.Node = _ = new Node()
 		{
 			Name = _ = $"{_ = type.Name}"
 		};
+
 		Main.Node.AddChild(
 			node: _ = this.Node
 		);

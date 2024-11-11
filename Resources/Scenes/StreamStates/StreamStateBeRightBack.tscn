@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://da7dlafl81ye8"]
+
+[ext_resource type="Script" path="res://Core/Contents/StreamStates/BeRightBacks/StreamStateBeRightBack.cs" id="1_hwmpc"]
+
+[node name="StreamStateBeRightBack" type="Node"]
+script = ExtResource("1_hwmpc")
+
+[node name="RootControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0

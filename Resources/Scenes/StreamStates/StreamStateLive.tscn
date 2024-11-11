@@ -1,0 +1,158 @@
+[gd_scene load_steps=5 format=3 uid="uid://br8t8shp3sr6c"]
+
+[ext_resource type="Script" path="res://Core/Contents/StreamStates/Lives/StreamStateLive.cs" id="1_8nfvy"]
+[ext_resource type="Texture2D" uid="uid://b3k17sufrfsv6" path="res://Resources/_Temp/temp_background.jpg" id="1_fuomr"]
+[ext_resource type="Texture2D" uid="uid://csox5dtor62ko" path="res://Resources/Icons/Icon_Follower.svg" id="2_c8vpy"]
+[ext_resource type="Script" path="res://Core/Contents/StreamStates/Lives/Controls/WebCams/WebCam.cs" id="3_0fheq"]
+
+[node name="StreamStateLive" type="Node"]
+script = ExtResource("1_8nfvy")
+
+[node name="RootControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="_TempBackground" type="TextureRect" parent="RootControl"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_fuomr")
+
+[node name="Alert" type="Control" parent="RootControl"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Color_Background" type="ColorRect" parent="RootControl/Alert"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 416.0
+offset_bottom = 96.0
+grow_horizontal = 0
+color = Color(0.0588235, 0.0509804, 0.0470588, 1)
+
+[node name="Color_Bar0" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -416.0
+offset_right = -352.0
+offset_bottom = 4.0
+grow_horizontal = 0
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_Bar1" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -416.0
+offset_top = 8.0
+offset_right = -342.0
+offset_bottom = 12.0
+grow_horizontal = 0
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_Bar2" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -416.0
+offset_top = 16.0
+offset_right = -362.0
+offset_bottom = 20.0
+grow_horizontal = 0
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_Bar3" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 24.0
+offset_right = 74.0
+offset_bottom = 28.0
+grow_horizontal = 0
+scale = Vector2(-1, -1)
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_Bar4" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 36.0
+grow_horizontal = 0
+scale = Vector2(-1, -1)
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_Bar5" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 40.0
+offset_right = 84.0
+offset_bottom = 44.0
+grow_horizontal = 0
+scale = Vector2(-1, -1)
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Color_IconBackground" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -512.0
+offset_right = -416.0
+offset_bottom = 96.0
+grow_horizontal = 0
+color = Color(0.607843, 0.964706, 1, 1)
+
+[node name="Icon" type="TextureRect" parent="RootControl/Alert/Color_Background/Color_IconBackground"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 84.0
+offset_bottom = 84.0
+texture = ExtResource("2_c8vpy")
+expand_mode = 1
+
+[node name="Color_Border" type="ColorRect" parent="RootControl/Alert/Color_Background"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 96.0
+
+[node name="Text_Title" type="RichTextLabel" parent="RootControl/Alert/Color_Background"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 372.0
+offset_bottom = 92.0
+bbcode_enabled = true
+text = "[font_size=32][font=res://Resources/Fonts/Segoe-UI-Bold.ttf]NEW FOLLOWER"
+fit_content = true
+
+[node name="Chat" type="Control" parent="RootControl"]
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 696.0
+offset_right = 64.0
+offset_bottom = 696.0
+
+[node name="WebCam" type="Control" parent="RootControl"]
+anchors_preset = 0
+script = ExtResource("3_0fheq")
+
+[node name="TextureRect" type="TextureRect" parent="RootControl/WebCam"]
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 840.0
+offset_right = 1792.0
+offset_bottom = 1080.0
+expand_mode = 2

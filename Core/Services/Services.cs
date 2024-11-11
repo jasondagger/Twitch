@@ -3,11 +3,11 @@ namespace Twitch.Core.Services;
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using Twitch.Core.Services.Databases;
 using Twitch.Core.Services.Godots;
 using Twitch.Core.Services.Spotifies;
+using Twitch.Core.Services.StreamStates;
 using Twitch.Core.Services.Twitches;
 using Twitch.Core.Services.WebCams;
 
@@ -23,7 +23,9 @@ internal static class Services
             class,
             IService
     {
-        return _ = Services.c_serviceTypes[key: _ = typeof(TService)] as TService;
+        return _ = Services.c_serviceTypes[
+            key: _ = typeof(TService)
+        ] as TService;
     }
 
     internal static async Task Start()
@@ -70,10 +72,11 @@ internal static class Services
 
     private static readonly Dictionary<Type, IService> c_serviceTypes = new()
     {
-		{ _ = typeof(ServiceDatabase), _ = new ServiceDatabase() },
-        { _ = typeof(ServiceGodots),   _ = new ServiceGodots()   },
-        { _ = typeof(ServiceSpotify),  _ = new ServiceSpotify()  },
-        { _ = typeof(ServiceTwitch),   _ = new ServiceTwitch()   },
-        { _ = typeof(ServiceWebCam),   _ = new ServiceWebCam()   },
+		{ _ = typeof(ServiceDatabase),     _ = new ServiceDatabase()     },
+        { _ = typeof(ServiceGodots),       _ = new ServiceGodots()       },
+        { _ = typeof(ServiceSpotify),      _ = new ServiceSpotify()      },
+        { _ = typeof(ServiceStreamStates), _ = new ServiceStreamStates() },
+        { _ = typeof(ServiceTwitch),       _ = new ServiceTwitch()       },
+		{ _ = typeof(ServiceWebCam),       _ = new ServiceWebCam()       },
 	};
 }

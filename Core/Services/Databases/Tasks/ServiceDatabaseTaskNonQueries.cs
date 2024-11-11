@@ -17,14 +17,19 @@ internal static class ServiceDatabaseTaskNonQueries
 		List<ServiceDatabaseTaskSqlParameter> serviceDatabaseTaskSqlParameters
 	)
 	{
-        await ServiceDatabaseTaskNonQueries.c_taskNonQueries[key: _ = serviceDatabaseTaskNonQueryType].Invoke(
+        await ServiceDatabaseTaskNonQueries.c_taskNonQueries[
+            key: _ = serviceDatabaseTaskNonQueryType
+        ].Invoke(
             arg: _ = serviceDatabaseTaskSqlParameters
         );
     }
 
     private static readonly Dictionary<ServiceDatabaseTaskNonQueryType, Func<List<ServiceDatabaseTaskSqlParameter>, Task>> c_taskNonQueries = new()
     {
-        { _ = ServiceDatabaseTaskNonQueryType.StoreSpotifyData, ServiceDatabaseTaskNonQueries.StoreAsyncSpotifyData },
+        {
+            _ = ServiceDatabaseTaskNonQueryType.StoreSpotifyData, 
+            ServiceDatabaseTaskNonQueries.StoreAsyncSpotifyData
+        },
 	};
 
     private static async Task StoreAsyncSpotifyData(

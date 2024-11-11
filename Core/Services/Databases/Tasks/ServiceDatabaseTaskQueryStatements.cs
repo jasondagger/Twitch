@@ -10,6 +10,6 @@ internal static class ServiceDatabaseTaskQueryStatements
 	}
 
 	internal const string RetrieveListTwitchUsers = $"SELECT * FROM TwitchUsers";
-	internal const string RetrieveSpotifyData     = $"SELECT TOP 1 FROM SpotifyDatas";
-	internal const string RetrieveTwitchData      = $"SELECT TOP 1 FROM TwitchDatas";
+	internal const string RetrieveSpotifyData     = $"SELECT TOP 1 * FROM SpotifyDatas";
+	internal const string RetrieveTwitchData      = $"SELECT TOP 1 * FROM TwitchDatas";
 }

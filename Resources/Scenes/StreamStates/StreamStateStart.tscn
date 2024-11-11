@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq75cienres83"]
+
+[ext_resource type="Script" path="res://Core/Contents/StreamStates/Starts/StreamStateStart.cs" id="1_0jfbs"]
+
+[node name="StreamStateStart" type="Node"]
+script = ExtResource("1_0jfbs")
+
+[node name="RootControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 internal sealed partial class ServiceWebCam() :
 	IService
 {
-	Task IService.Setup()
+	Task IService.Setup() 
 	{
 		this.CaptureVideoCaptureDeviceFromOperatingSystem();
 		return _ = Task.CompletedTask;
@@ -53,6 +53,7 @@ internal sealed partial class ServiceWebCam() :
 	}
 
 	private const string   c_targetImageExtension = $".png";
+	private const int      c_targetVideoCaptureId = 0;
 	private readonly Image m_image				  = new();
 	private VideoCapture   m_videoCapture		  = null;
 
@@ -64,7 +65,7 @@ internal sealed partial class ServiceWebCam() :
 	private void CaptureVideoCaptureDeviceFromOperatingSystem()
 	{
 		_ = this.m_videoCapture = _ = VideoCapture.FromCamera(
-			index: _ = 0
+			index: _ = ServiceWebCam.c_targetVideoCaptureId
 		);
 	}
 }

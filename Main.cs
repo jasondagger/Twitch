@@ -3,12 +3,8 @@ namespace Twitch;
 
 using Godot;
 using System;
-using System.Runtime.Versioning;
 using Twitch.Core.Services;
 
-[SupportedOSPlatform(
-	"windows"
-)]
 internal sealed partial class Main() :
 	Node()
 {
@@ -24,7 +20,7 @@ internal sealed partial class Main() :
 					$"EXCEPTION: " +
 					$"{_ = nameof(Main)}." +
 					$"{_ = nameof(Main.Node)} - " +
-					$"Duplicate '{_ = nameof(Main)}' detected."
+					$"EXCEPTION: Duplicate '{_ = nameof(Main)}' detected."
 			);
 		}
 #endif

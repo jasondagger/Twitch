@@ -16,15 +16,29 @@ internal static class ServiceDatabaseTaskQueries
         ServiceDatabaseTaskQueryType serviceDatabaseTaskQueryType
     )
     {
-        await ServiceDatabaseTaskQueries.c_taskQueries[ key: _ = serviceDatabaseTaskQueryType ].Invoke();
+        await ServiceDatabaseTaskQueries.c_taskQueries[
+			key: _ = serviceDatabaseTaskQueryType
+		].Invoke();
     }
 
     private static readonly Dictionary<ServiceDatabaseTaskQueryType, Func<Task>> c_taskQueries = new()
     {
-        { _ = ServiceDatabaseTaskQueryType.Start,                   ServiceDatabaseTaskQueries.Start                        },
-        { _ = ServiceDatabaseTaskQueryType.RetrieveListTwitchUsers, ServiceDatabaseTaskQueries.RetrieveAsyncListTwitchUsers },
-        { _ = ServiceDatabaseTaskQueryType.RetrieveSpotifyData,     ServiceDatabaseTaskQueries.RetrieveAsyncSpotifyData     },
-        { _ = ServiceDatabaseTaskQueryType.RetrieveTwitchData,      ServiceDatabaseTaskQueries.RetrieveAsyncTwitchData      },
+        {
+			_ = ServiceDatabaseTaskQueryType.Start,
+			ServiceDatabaseTaskQueries.Start
+		},
+        {
+			_ = ServiceDatabaseTaskQueryType.RetrieveListTwitchUsers,
+			ServiceDatabaseTaskQueries.RetrieveAsyncListTwitchUsers
+		},
+        {
+			_ = ServiceDatabaseTaskQueryType.RetrieveSpotifyData,
+			ServiceDatabaseTaskQueries.RetrieveAsyncSpotifyData
+		},
+        {
+			_ = ServiceDatabaseTaskQueryType.RetrieveTwitchData,
+			ServiceDatabaseTaskQueries.RetrieveAsyncTwitchData
+		},
 	};
 
 	private static async Task RetrieveAsyncListTwitchUsers()
